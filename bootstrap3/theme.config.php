@@ -10,6 +10,7 @@ return [
         'print.css:print',
         'flex-fallback.css::lt IE 10', // flex polyfill
     ],
+	
     'js' => [
         'vendor/jquery.min.js',
         'vendor/bootstrap.min.js',
