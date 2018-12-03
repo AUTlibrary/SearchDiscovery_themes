@@ -4,8 +4,8 @@ return [
     'css' => [
         'https://fonts.googleapis.com/css?family=Source+Sans+Pro',
 	],
-	"less" => array(
-      "active" => true/false,
-      "compiled.less"
-),
+	'less' => array [
+      'active' => true,
+      'compiled.less'
+]
 ];	
