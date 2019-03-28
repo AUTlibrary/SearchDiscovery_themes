@@ -67,6 +67,9 @@ header {
     color: @black;
     background-color: @header-light;
   }
+  .navbar-form .form-control {
+	font-size: 18px;
+  }
   .navbar-toggle {
     margin: .5rem;
     padding-left: 1rem;
@@ -81,7 +84,7 @@ header {
   .dropdown-menu .active a,
   .dropdown-menu .active a:hover { background-color: @header-bg; }
 
-/*  .form-control { border: 0; } AUT commented out */
+  .form-control { height: 40px; } /* { border: 0; } AUT commented out */
   .form-control:focus {
     padding-bottom: 3px; // Smaller font-size means smaller jump
     border-bottom: 3px solid @orange;
