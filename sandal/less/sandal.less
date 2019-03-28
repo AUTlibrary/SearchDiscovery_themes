@@ -46,16 +46,16 @@ header {
   font-weight: 500;
   /* color: @white; AUT commented out */
 
-  .btn-link {
-	color: @link-color;
-	&:hover { color: @link-color-hover; }
-  }
   .navbar-nav { margin-top: 0; }
   a,
   .nav a,
   .btn-link {
     color: @white;
     &:hover { color: @header-light; }
+  }
+  .btn-link {
+	color: @link-color !important;
+	&:hover { color: @link-color-hover !important; }
   }
   .btn-primary {
     color: @white;
