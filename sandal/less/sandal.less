@@ -167,18 +167,18 @@ header {
 /* --- Sidebar --- */
 .sidebar {
   padding-top: 1rem;
-  font-size: @reduced-font-size;
-  background-color: @light-gray;
+  font-size: inherit;
+  background-color: @white;
 
   .facet-group {
-    margin-left: 1rem;
+    margin-left: 0rem;
     margin-right: 1rem;
     background-color: @sidebar-item-bg;
     color: @sidebar-item-color;
   }
   /* Collapsed arrows */
   .facet-group .title {
-    background-color: @sidebar-title-bg;
+    background-color: @light-gray;
     color: @sidebar-title-color;
     &::after {
       width: 1rem;
@@ -274,6 +274,7 @@ mark {
 #searchForm_lookfor {
 	margin-left: 1rem;
 }
+.sidebar > h4 { margin-left: 0rem; }
 /* --- AUT Library header --- */
 #topHeader{
     background-color: #d93b20;
