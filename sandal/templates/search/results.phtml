@@ -53,11 +53,9 @@
 ?>
 
 <div class="<?=$this->layoutClass('mainbody')?>">
-  <?php if (($recordTotal = $this->results->getResultTotal()) > 0): // only display these at very top if we have results ?>
-    <?php foreach ($this->results->getRecommendations('top') as $current): ?>
-      <?=$this->recommend($current)?>
-    <?php endforeach; ?>
-  <?php endif; ?>
+  <?php>
+	$recordTotal = $this->results->getResultTotal()
+  ?>
   <?=$this->flashmessages()?>
   <nav class="search-header hidden-print">
     <div class="search-stats">
@@ -67,9 +65,14 @@
         <h2><?=$this->transEsc('nohit_heading')?></h2>
       <?php endif; ?>
     </div>
-
   <!--AUT removed sort options from here-->
   </nav>
+  <?php if ($recordTotal > 0): // only display these at very top if we have results ?>
+    <?php foreach ($this->results->getRecommendations('top') as $current): ?>
+      <?=$this->recommend($current)?>
+    <?php endforeach; ?>
+  <?php endif; ?>
+
   <?php /* End Listing Options */ ?>
   <?php if ($recordTotal < 1): ?>
     <p>
