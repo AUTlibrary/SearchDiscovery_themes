@@ -68,13 +68,7 @@
       <?php endif; ?>
     </div>
 
-    <?php if ($recordTotal > 0): ?>
-      <div class="search-controls">
-        <?=$this->render('search/controls/limit.phtml')?>
-        <?=$this->render('search/controls/sort.phtml')?>
-        <?=$this->render('search/controls/view.phtml')?>
-      </div>
-    <?php endif; ?>
+
   </nav>
   <?php /* End Listing Options */ ?>
   <?php if ($recordTotal < 1): ?>
