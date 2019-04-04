@@ -21,8 +21,8 @@
   <?php endif; ?>
 <?php endif; ?>
 <?php $this->layout()->srmessage = $showingResults; ?>
-<?php if ($qtime = $this->results->getQuerySpeed()): ?>
-  <?=$showingResults; ?><span class="search-query-time">, <?=$this->transEsc('query time')?>: <?=$this->localizedNumber($qtime, 2) . $this->transEsc('seconds_abbrev')?></span>
-<?php else: ?>
-  <?=$showingResults; ?>
-<?php endif; ?>
+<!-- <?php// if ($qtime = $this->results->getQuerySpeed()): ?> -->
+<!--  <?//=$showingResults; ?><span class="search-query-time">, <?//=$this->transEsc('query time')?>: <?//=$this->localizedNumber($qtime, 2) . $this->transEsc('seconds_abbrev')?></span> -->
+<!-- <?php// else: ?> -->
+<!--  <?//=$showingResults; ?> -->
+<!-- <?php// endif; ?>-->
