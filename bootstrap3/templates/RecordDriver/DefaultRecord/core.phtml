@@ -6,7 +6,7 @@
     $preview = $this->record($this->driver)->getPreviews();
   ?>
   <?php if ($QRCode || $cover || $preview): ?>
-    <div class="media-left <?=$this->escapeHtmlAttr($coverDetails['size'])?> img-col">
+    <div class="media-right <?=$this->escapeHtmlAttr($coverDetails['size'])?> img-col">
       <?php /* Display thumbnail if appropriate: */ ?>
       <?php if($cover): ?>
         <?=$cover?>
