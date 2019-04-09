@@ -21,7 +21,7 @@ return [
         'lightbox.js',
     ],
     'less' => [
-        'active' => false,
+        'active' => true,
         'compiled.less'
     ],
     'favicon' => 'vufind-favicon.ico',

@@ -6,12 +6,12 @@
 @import "rtl";
 
 html {
-  font-size: 16px;
+  font-size: 18px; // AUT increase from 16px
   overflow-x: hidden;
 }
 body {
   font-size: 1rem;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; // native font stack
+  font-family: 'Source Sans Pro', sans-serif; // native font stack AUT SSP
   color: @near-black;
 }
 
@@ -44,28 +44,36 @@ header {
   background-color: @header-bg;
   font-size: @reduced-font-size;
   font-weight: 500;
-  color: @white;
+  /* color: @white; AUT commented out */
 
+  .navbar { font-size: .8889rem; }
   .navbar-nav { margin-top: 0; }
   a,
   .nav a,
   .btn-link {
-    color: @white;
+    color: @near-black;
     &:hover { color: @header-light; }
   }
+  .btn-link {
+	color: @link-color !important;
+	&:hover { color: @link-color-hover !important; }
+  }
   .btn-primary {
-    color: @black;
-    background-color: @header-light;
+    color: @white;
+    background-color: @brand-primary;
   }
   .btn-primary:hover {
-    color: @black;
-    background-color: @header-light;
-    border-color: @black;
+    color: @white;
+    background-color: @brand-secondary;
+    border-color: @brand-primary;
   }
   .nav>li>a:hover,
   .nav>li>a:focus {
-    color: @black;
-    background-color: @header-light;
+    color: @black-50;
+    background-color: transparent; /* AUT change */
+  }
+  .navbar-form .form-control {
+	font-size: 18px;
   }
   .navbar-toggle {
     margin: .5rem;
@@ -81,10 +89,10 @@ header {
   .dropdown-menu .active a,
   .dropdown-menu .active a:hover { background-color: @header-bg; }
 
-  .form-control { border: 0; }
+  .form-control { height: 40px; } /* { border: 0; } AUT commented out */
   .form-control:focus {
     padding-bottom: 3px; // Smaller font-size means smaller jump
-    border-bottom: 3px solid @gold;
+    border-bottom: 3px solid @orange;
   }
 
   .navbar-brand {
@@ -104,6 +112,7 @@ header {
 }
 
 .breadcrumbs {
+  display: none;
   border-bottom: 1px solid @header-light;
   background-color: @header-light;
 }
@@ -159,18 +168,18 @@ header {
 /* --- Sidebar --- */
 .sidebar {
   padding-top: 1rem;
-  font-size: @reduced-font-size;
-  background-color: @light-gray;
+  font-size: initial;
+  background-color: @white;
 
   .facet-group {
-    margin-left: 1rem;
+    margin-left: 0rem;
     margin-right: 1rem;
     background-color: @sidebar-item-bg;
     color: @sidebar-item-color;
   }
   /* Collapsed arrows */
   .facet-group .title {
-    background-color: @sidebar-title-bg;
+    background-color: @light-gray;
     color: @sidebar-title-color;
     &::after {
       width: 1rem;
@@ -233,5 +242,257 @@ header {
       order: 1;
     }
     .exclude { order: 2; }
+  }
+}
+/* --- Craig changes to be integrated into file structure after completed --- */
+
+/* header changes */
+.highlight, mark {
+  padding: 0em;
+  background-color: #ffffff;
+  color: inherit;
+}
+.btn {
+  height: 40px;
+  font-size: 18px;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    outline: none;
+}
+.nav.searchbox {
+	margin-bottom: 1rem;
+	background-color: @light-gray;
+}
+.nav.searchbox .nav-tabs .active a, #searchForm .nav-tabs .active a {
+    color: @brand-secondary;
+    border-color: @brand-primary;
+}
+.nav.searchbox .nav-tabs a:hover, #searchForm .nav-tabs a:hover {
+	border-color: @gray;
+}
+#searchForm {
+	padding-top: 1rem;
+}
+#searchForm_lookfor {
+	margin-left: 1rem;
+}
+/* footer changes */
+#footer-colour {
+	background-color: @light-gray;
+}
+/* results page changes */
+.sidebar > h4 { margin-left: 0rem; }
+.sidebar label {
+    font-weight: normal;
+}
+.facet-group .title {
+	font-weight: normal;
+}
+.form-control {
+	font-size: initial
+}
+.search-header {
+	font-size: 1rem;
+	padding: 0rem;
+}
+.search-stats {
+	padding-top: 0rem;
+}
+.top-title {
+	font-weight: normal;
+}
+.top-facets {
+	border: 1px solid #ddd;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.top-facets .facet {
+	padding: 0rem .5rem;
+}
+.bulkActionButtons {
+	margin-top: 1rem;
+}
+.bulk-checkbox {
+	margin-right: .5rem;
+}
+.result {
+	font-size: 1rem;
+}
+.result .title {
+	font-size: 1.333rem;
+	font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	line-height: unset;
+}
+.result-links {
+	text-align: right;
+}
+.result .media-right {
+	float: right;
+}
+.result-formats .format {
+    background-color: transparent;
+    color: @near-black;
+    font-size: 1rem;
+    padding: 0px;
+}
+.status .label {
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 0px;
+    font-weight: 700;
+}
+.label-success {
+	color: #028302;
+}
+.label-danger {
+	color: #a41915;
+}
+.pagination > li > a, .pagination > li > span {
+	color: @near-black;
+	font-size: .7778rem;
+}
+.searchtools {
+    margin-bottom: 1rem;
+}
+/* record page changes */
+.record .media-right {
+	float: right;
+}
+.record .media-body h3 {
+    font-size: 1.778rem;
+	line-height: initial;
+}
+.record .media-body .table {
+    font-size: 1rem;
+	table-layout: auto;
+	margin-bottom: 4rem;
+}
+.record th {
+    font-weight: normal;
+	min-width: 10rem;
+}
+/* --- AUT Library header --- */
+#topHeader{
+    background-color: #d93b20;
+    display: none;
+}
+#topHeader .container {
+  position: relative;
+}
+#mainHeader {
+  height: 57px;
+  background-color: #f26522;
+}
+#mainHeader .headerInner {
+  position: relative;
+}
+@media screen and (min-width: 630px) {
+  #mainHeader {
+    height: 62px;
+  }
+}
+@media screen and (min-width: 840px) {
+  #mainHeader {
+    height: 82px;
+  }
+}
+@media screen and (min-width: 1320px) {
+  #mainHeader {
+    height: 70px;
+  }
+  #topHeader {
+    height: 50px;
+    display: block;
+  }
+}
+.headerLogo {
+  display: block;
+  position: absolute;
+  z-index: 14;
+  width: 68px;
+  height: 80px;
+  top: 0;
+  background-image: url("https://www.aut.ac.nz/__data/assets/file/0020/144272/AUT-Logo.svg");
+  background-size: 100% auto;
+  text-indent: -9999px;
+  right: 0;
+}
+.headerLogo {
+  background-image: url("https://www.aut.ac.nz/__data/assets/file/0011/166871/AUT_Logo-black.svg");
+  width: 64px;
+  height: 64px;
+  background-position: bottom;
+}
+@media only screen and (min-width: 630px) {
+  .headerLogo {
+    width: 84px;
+    height: 84px;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .headerLogo {
+    width: 115px;
+    height: 115px;
+  }
+  .container {
+    width: 780px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+}
+@media only screen and (min-width: 1080px) {
+  .headerLogo {
+    width: 120px;
+    height: 120px;
+  }
+  .container {
+    width: 1020px;
+}
+}
+@media only screen and (min-width: 1320px) {
+  .headerLogo {
+    width: 134px;
+    height: 134px;
+    margin-top: -50px;
+  }
+  .container {
+    width: 1260px;
+    }
+}
+@media screen and (min-width: 1428px){
+    .container {
+        width: 1368px;
+    }
+}
+.libraryLogo {
+  display: block;
+  position: absolute;
+  z-index: 14;
+  width: 108px;
+  height: 81px;
+  top: 0;
+  background-image: url("https://library.aut.ac.nz/__data/assets/file/0010/239707/library-logo.svg");
+  background-size: 100% auto;
+  text-indent: -9999px;
+}
+@media only screen and (min-width: 630px) {
+  .libraryLogo {
+    width: 118px;
+    height: 87px;
+  }
+}
+@media only screen and (min-width: 840px) {
+  .libraryLogo {
+    width: 156px;
+    height: 114px;
+  }
+}
+@media only screen and (min-width: 1320px) {
+  .libraryLogo {
+    margin-top: -50px;
+    width: 240px;
+    height: 180px;
   }
 }
